@@ -8,18 +8,43 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "yarn lint:js",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "format": "prettier .  --write"
   },
   "dependencies": {
     "@nuxt/http": "latest",
     "express": "latest",
-    "nuxt": "latest"
+    "@nuxtjs/composition-api": "^0.26.0",
+    "daisyui": "^1.11.1"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^4.2.1",
+    "nuxt": "latest",
+    "tailwindcss": "^2.2.6",
+    "postcss": "^8.3.6",
+    "autoprefixer": "^10.3.1",
+    "nuxt-vite": "latest",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.20.0",
     "eslint-plugin-nuxt": "^2.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "extends": [
+      "@nuxtjs",
+      "plugin:nuxt/recommended"
+    ],
+    "rules": {
+      "vue/no-unused-vars": "error"
+    }
   }
 }

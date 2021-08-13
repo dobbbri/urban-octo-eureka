@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .page-layout {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .openedMenu {
+    transform: translate3d(-300px, 0, 0);
+    transition: transform 0.4s ease;
+  }
+  .closedMenu {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.4s ease;
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .scroll-snap-none {
+      scroll-snap-type: none;
+    }
+    .scroll-snap-x {
+      scroll-snap-type: x;
+    }
+    .scroll-snap-y {
+      scroll-snap-type: y;
+    }
+  }
+  @variants focus, hover {
+    .filter-grayscale {
+      filter: grayscale(100%);
+    }
+  }
+}
