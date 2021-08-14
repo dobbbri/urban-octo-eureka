@@ -15,21 +15,17 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
-  plugins: [],
+  plugins: ['~/plugins/http', '~/plugins/directive.client.js', '~/plugins/vee-validate'],
 
   components: true,
 
   buildModules: ['nuxt-vite', '@nuxtjs/tailwindcss', '@nuxtjs/eslint-module'],
 
-  tailwindcss: {
-    viewer: false
-  },
+  tailwindcss: { viewer: false },
 
   modules: ['@nuxt/http'],
 
-  serverMiddleware: {
-    '/api': '~/api'
-  },
+  serverMiddleware: { '/api': '~/api' },
 
   /*
    ** For deployment you might want to edit host and port
