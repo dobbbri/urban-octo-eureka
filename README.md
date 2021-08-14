@@ -1,6 +1,5 @@
 <p align="center"><img width="328px" src="https://nuxtjs.org/logos/nuxt.svg"></p>
 
-
 # Nuxt.js with Express
 
 > [ExpressJS](http://expressjs.com/) + [Nuxt.js](https://nuxtjs.org) = :zap:
@@ -19,16 +18,16 @@ yarn install # or npm install
 
 ## ExpressJS Changes
 
-- There is a  `api` directory with the root of your `api` server.
+- There is a `api` directory with the root of your `api` server.
 - The `routes` directory is called `api/routes`.
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| npm run dev | Start ExpressJS server in development with Nuxt.js in dev mode (hot reloading). Listen on [http://localhost:3000](http://localhost:3000). |
-| npm run build | Build the nuxt.js web application for production. |
-| npm start | Start ExpressJS server in production. |
+| Command       | Description                                                                                                                               |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| npm run dev   | Start ExpressJS server in development with Nuxt.js in dev mode (hot reloading). Listen on [http://localhost:3000](http://localhost:3000). |
+| npm run build | Build the nuxt.js web application for production.                                                                                         |
+| npm start     | Start ExpressJS server in production.                                                                                                     |
 
 ## Examples
 
@@ -45,5 +44,3 @@ yarn install # or npm install
 - [ExpressJS license](https://github.com/expressjs/express/blob/master/LICENSE)
 - [NuxtJS license](https://github.com/nuxt/nuxt.js/blob/master/LICENSE.md)
 - [VueJS license](https://github.com/vuejs/vue/blob/master/LICENSE)
-
-

@@ -13,22 +13,41 @@
   },
   "dependencies": {
     "@nuxt/http": "latest",
-    "express": "latest",
     "@nuxtjs/composition-api": "^0.26.0",
-    "daisyui": "^1.11.1"
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "daisyui": "^1.11.1",
+    "dotenv": "^10.0.0",
+    "express": "latest",
+    "express-jwt": "^6.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^5.13.7",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "vee-validate": "^3.4.11",
+    "vue-currency-input": "^2.0.1"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^4.2.1",
-    "nuxt": "latest",
-    "tailwindcss": "^2.2.6",
-    "postcss": "^8.3.6",
-    "autoprefixer": "^10.3.1",
-    "nuxt-vite": "latest",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/tailwindcss": "^4.2.1",
+    "autoprefixer": "^10.3.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.20.0",
-    "eslint-plugin-nuxt": "^2.0.0"
+    "eslint-plugin-nuxt": "^2.0.0",
+    "nuxt": "latest",
+    "nuxt-vite": "^0.1.2",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.6"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "none",
+    "arrowParens": "always",
+    "htmlWhitespaceSensitivity": "ignore"
   },
   "eslintConfig": {
     "root": true,

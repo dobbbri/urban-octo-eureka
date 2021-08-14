@@ -1,24 +1,55 @@
+const path = require('path')
 const express = require('express')
-
-// Create express instance
 const app = express()
+const morgan = require('morgan')
+const mongoose = require('mongoose')
+const cors = require('cors')
+// helpers
+const authJwt = require('./helpers/jwt')
+const errorHandler = require('./helpers/error-handler')
+// routes
+const usersRoutes = require('./routes/users')
+// const categoriesRoutes = require('./routes/categories')
+// const productsRoutes = require('./routes/products')
+// const ordersRoutes = require('./routes/orders')
+// environment
+require('dotenv/config')
 
-// Require API routes
-const users = require('./routes/users')
-const test = require('./routes/test')
+app.use(cors())
+app.options('*', cors())
 
-// Import API Routes
-app.use(users)
-app.use(test)
+// middleware
+app.use(express.json())
+app.use(morgan('tiny'))
+app.use(authJwt())
+app.use(express.static(path.join(__dirname, '/public/uploads')))
+
+// routes
+app.use('/v1/users', usersRoutes)
+// app.use('/v1/categories', categoriesRoutes)
+// app.use('/v1/products', productsRoutes)
+// app.use('/v1/orders', ordersRoutes)
+
+// error handler
+app.use(errorHandler)
+
+// Database
+const connectionString = process.env.CONNECTION_STRING.replace('<database>', process.env.DB_NAME)
+
+mongoose
+  .connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: process.env.DB_NAME
+  })
+  .then(() => console.log(`DB: ${process.env.DB_NAME}, connection is ready...`))
+  .catch((err) => console.log(err))
 
 // Export express app
 module.exports = app
 
-// Start standalone server if directly running
+// Start standalone Server if directly running
 if (require.main === module) {
-  const port = process.env.PORT || 3001
-  app.listen(port, () => {
-    // eslint-disable-next-line no-console
-    console.log(`API server listening on port ${port}`)
-  })
+  const PORT = process.env.PORT || 3000
+  app.listen(PORT, () => console.log(`API server listening on port ${PORT}`))
 }
